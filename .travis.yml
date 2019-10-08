@@ -11,10 +11,11 @@ addons:
       - libstdc++6
       - fonts-droid-fallback
 before_script:
+  - export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:$PATH
   - git clone https://github.com/flutter/flutter.git -b beta
-  - ./flutter/bin/flutter doctor
+  - flutter doctor
 script:
-  - ./flutter/bin/flutter test
+  - flutter test
 cache:
   directories:
     - $HOME/.pub-cache
